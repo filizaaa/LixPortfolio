@@ -72,14 +72,15 @@ namespace LixPortfolio.Controllers
             {
                 return View(model);
             }
-
+            string email = model.Email;
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    UserData.LoggedEmail = email;
+                    return  RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -115,7 +116,7 @@ namespace LixPortfolio.Controllers
             {
                 return View(model);
             }
-
+          
             // The following code protects for brute force attacks against the two factor codes. 
             // If a user enters incorrect codes for a specified amount of time then the user account 
             // will be locked out for a specified amount of time. 
@@ -124,6 +125,7 @@ namespace LixPortfolio.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                   
                     return RedirectToLocal(model.ReturnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -331,9 +333,11 @@ namespace LixPortfolio.Controllers
             // Sign in the user with this external login provider if the user already has a login
             var result = await SignInManager.ExternalSignInAsync(loginInfo, isPersistent: false);
             switch (result)
-            {
+            {   
                 case SignInStatus.Success:
+                   
                     return RedirectToLocal(returnUrl);
+
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -392,7 +396,9 @@ namespace LixPortfolio.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            UserData.LoggedEmail = "";
             return RedirectToAction("Index", "Home");
+            
         }
 
         //

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c25d4da68b0841c393b7fd54611defae" Name="Diagram1">
+        <EntityTypeShape EntityType="StarLabs_PortfolioModel.AcademicLife" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarLabs_PortfolioModel.AcademicType" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarLabs_PortfolioModel.Contact" Width="1.5" PointX="6" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarLabs_PortfolioModel.ContactType" Width="1.5" PointX="3.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarLabs_PortfolioModel.Experience" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarLabs_PortfolioModel.Hobby" Width="1.5" PointX="3" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarLabs_PortfolioModel.Personal" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarLabs_PortfolioModel.Skill" Width="1.5" PointX="6" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarLabs_PortfolioModel.SkillType" Width="1.5" PointX="3.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarLabs_PortfolioModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarLabs_PortfolioModel.Username" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarLabs_PortfolioModel.WorkType" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="StarLabs_PortfolioModel.FK_AcademicLife_AcademicType" ManuallyRouted="false" />
+        <AssociationConnector Association="StarLabs_PortfolioModel.FK_AcademicLife_Personal" ManuallyRouted="false" />
+        <AssociationConnector Association="StarLabs_PortfolioModel.FK_Contact_ContactType" ManuallyRouted="false" />
+        <AssociationConnector Association="StarLabs_PortfolioModel.FK_Contact_Personal" ManuallyRouted="false" />
+        <AssociationConnector Association="StarLabs_PortfolioModel.FK_Experience_Personal" ManuallyRouted="false" />
+        <AssociationConnector Association="StarLabs_PortfolioModel.FK_Experience_WorkType" ManuallyRouted="false" />
+        <AssociationConnector Association="StarLabs_PortfolioModel.FK_Hobbies_Personal" ManuallyRouted="false" />
+        <AssociationConnector Association="StarLabs_PortfolioModel.FK_Skills_Personal" ManuallyRouted="false" />
+        <AssociationConnector Association="StarLabs_PortfolioModel.FK_Skills_SkillTypes" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

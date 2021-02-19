@@ -1,8 +1,13 @@
 ﻿@model LixPortfolio.Models.RegisterViewModel
 @{
     ViewBag.Title = "Register";
+    Layout = "";
 }
-
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@ViewBag.Title - My ASP.NET Application</title>
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
 <h2>@ViewBag.Title.</h2>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -28,6 +33,9 @@
         <div class="col-md-10">
             @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
         </div>
+        <p>
+            @Html.ActionLink("Log In", "Login")
+        </p>
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">

@@ -1,0 +1,42 @@
+﻿@model LixPortfolio.Models.Contact
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Contact</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Contact
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact1)
+        </dd>
+
+        <dt>
+           Contact URL
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactType1.ContactName)
+        </dd>
+
+        <dt>
+            Person Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Personal.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

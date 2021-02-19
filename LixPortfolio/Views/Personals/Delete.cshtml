@@ -1,0 +1,227 @@
+﻿@model LixPortfolio.Models.ViewModel
+
+
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<h3>A jeni të sigurte qe doni ta fshini këtë profil së bashku me të  dhënat tjera që permbanë Portfolio ?</h3>
+<div>
+
+    @foreach (var item in Model.Personal)
+    {
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Name
+            </dt>
+
+            <dd>
+                @Html.Raw(item.Name)
+            </dd>
+
+            <dt>
+                Surname
+            </dt>
+
+            <dd>
+                @Html.Raw(item.Surname)
+            </dd>
+
+            <dt>
+                Birthdate
+            </dt>
+
+            <dd>
+                @Html.Raw(item.DateOfBirth)
+            </dd>
+
+            <dt>
+               Hometown
+            </dt>
+
+            <dd>
+                @Html.Raw(item.Hometown)
+            </dd>
+
+            <dt>
+                Personal Statement
+            </dt>
+
+            <dd>
+                @Html.Raw(item.Description)
+            </dd>
+
+
+
+        </dl>
+
+    }
+    <hr />
+    <table class="table">
+        <tr>
+            <th>
+                Institution
+            </th>
+            <th>
+                Start
+            </th>
+            <th>
+               End
+            </th>
+            <th>
+               Description
+            </th>
+            <th>
+               Education Type
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.AcademicLife)
+        {
+            <tr>
+                <td>
+                    @Html.Raw(item.Academy)
+                </td>
+                <td>
+                    @Html.Raw(item.StartDate)
+                </td>
+                <td>
+                    @Html.Raw(item.EndDate)
+                </td>
+                <td>
+                    @Html.Raw(item.Description)
+                </td>
+                <td>
+                    @Html.Raw(item.AcademicType1.AcademyType)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>
+               Skills
+            </th>
+            <th>
+                Description
+            </th>
+
+            <th>
+               Skills Type
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Skills)
+        {
+            <tr>
+                <td>
+                    @Html.Raw(item.Skill1)
+                </td>
+                <td>
+                    @Html.Raw(item.Skill_Description)
+                </td>
+                <td>
+                    @Html.Raw(item.SkillType1.SkillType1)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+
+    <hr />
+    <table class="table">
+        <tr>
+            <th>
+                WorkPlace
+            </th>
+            <th>
+               Description
+            </th>
+            <th>
+                Start
+            </th>
+            <th>
+                End
+            </th>
+
+            <th>
+               Work Type
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Experiences)
+        {
+            <tr>
+                <td>
+                    @Html.Raw(item.WorkPlace)
+                </td>
+                <td>
+                    @Html.Raw(item.Description)
+                </td>
+                <td>
+                    @Html.Raw(item.StartDate)
+                </td>
+                <td>
+                    @Html.Raw(item.EndDate)
+                </td>
+
+                <td>
+                    @Html.Raw(item.WorkType1.WorkType1)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+
+    <hr />
+    <table class="table">
+        <tr>
+            <th>
+               Cantact
+            </th>
+            <th>
+                Contact Type
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Contacts)
+        {
+            <tr>
+                <td>
+                    @Html.Raw(item.Contact1)
+                </td>
+                <td>
+                    @Html.Raw(item.ContactType1.ContactName)
+                </td>
+
+
+            </tr>
+        }
+
+    </table>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Go back to the list", "Index")
+        </div>
+    }
+</div>
